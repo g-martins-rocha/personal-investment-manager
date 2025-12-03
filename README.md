@@ -1,43 +1,58 @@
-# Personal Investment Manager (Portfolio Version)
+# Personal Investment Manager (PIM)
 
-A comprehensive, offline-first Single Page Application (SPA) designed for advanced investment portfolio management. 
+Sistema de gestão de portfólio de investimentos "High-Fidelity" focado nas regras de negócio do mercado financeiro brasileiro (B3). Desenvolvido com arquitetura SPA (Single Page Application) em JavaScript Puro (Vanilla JS), operando em modo offline-first.
 
-This project demonstrates the capability to build complex financial systems using pure web technologies (**Vanilla JavaScript**, HTML5, CSS3), focusing on performance, data integrity, and sophisticated financial logic without relying on heavy frameworks.
+🔗 **[Acesse a Demonstração Online Aqui](https://seu-usuario.github.io/personal-investment-manager/)**
+*(O sistema carregará automaticamente dados fictícios de demonstração ao abrir)*
 
-## 🚀 Key Features
+## 🎯 Visão Geral
 
-### 1. Smart Rebalancing Engine
-- **Dual-Mode Strategy:** Supports rebalancing by macro-category (e.g., 60/40 split) or by individual asset scoring.
-- **Quality Scoring Algorithm:** Prioritises asset purchases based on a composite score of Dividend Yield, Price-to-Book (P/B), and Benjamin Graham's valuation formula.
-- **Safety Locks:** Prevents selling assets at a loss during rebalancing suggestions automatically.
+Este projeto nasceu da necessidade de superar as limitações das planilhas tradicionais e plataformas comerciais, que muitas vezes falham em tratar eventos corporativos complexos e cálculos tributários específicos do Brasil.
 
-### 2. Advanced Performance Tracking
-- **Event Sourcing Architecture:** The system reconstructs the portfolio state (average price, current balance) by replaying the entire history of transactions, splits, and dividends rather than storing static balances.
-- **Total Return Calculation:** Tracks performance accounting for both capital gains and income (dividends/interest).
-- **Internal Rate of Return (IRR/TIR):** Calculates the real profitability of the portfolio over time.
+O objetivo não foi apenas "registrar ativos", mas criar um motor de decisão para o investidor, oferecendo ferramentas de **Business Intelligence** e **Controle de Risco** geralmente encontradas apenas em plataformas profissionais de Wealth Management.
 
-### 3. Offline-First Architecture
-- **Data Privacy:** Runs entirely in the browser. Data is persisted using `localStorage` and can be exported/imported via JSON files.
-- **Zero Dependencies:** Built without React, Vue, or Angular to demonstrate mastery of core JavaScript fundamentals and DOM manipulation.
+## 🚀 Principais Funcionalidades
 
-## 🛠 Technical Highlights
+### 1. Algoritmo de Rebalanceamento Inteligente
+O "coração" do sistema. Diferente de rebalanceamentos simples que apenas olham percentuais, este módulo atua como um consultor de alocação:
+* **Alocação Híbrida:** Permite definir metas Macro (por Categoria: Ações, FIIs, RF) e Micro (Score individual do ativo).
+* **Motor de Seleção de Compra:** Sugere aportes baseados em um **Score de Qualidade** que pondera:
+    * *Valuation:* Preço Teto de Bazin (para ações) e P/VP (para FIIs).
+    * *Dividend Yield:* Projeção de renda futura baseada no histórico.
+    * *Payout:* Sustentabilidade dos dividendos.
+* **Travas de Segurança na Venda:** O sistema bloqueia sugestões de venda que gerariam prejuízo financeiro (Preço Atual < Preço Médio) ou venda de patrimônio com deságio (P/VP < 1.0), forçando o investidor a seguir princípios de Value Investing.
 
-- **Architecture:** MVC-inspired pattern implemented in Vanilla JS.
-- **State Management:** Custom state handling derived from transaction logs (Ledger logic).
-- **UI/UX:** Responsive layout with dynamic dashboards, interactive charts (Chart.js), and "ticker tape" updates.
-- **Financial Logic:** Implementation of complex formulas for Average Cost, Yield on Cost (YoC), and Compound Annual Growth Rate (CAGR).
+### 2. Análise de Performance Avançada (Total Return)
+Vai muito além da simples variação de cotação.
+* **Gráfico Comparativo:** Permite cruzar o desempenho de Ativos individuais vs. Categorias vs. Índices de Referência (IBOV/IFIX).
+* **Cálculo de TIR (Taxa Interna de Retorno):** Implementação do método numérico (similar ao Newton-Raphson) para calcular a rentabilidade real de fluxos de caixa irregulares.
+* **Yield on Cost (YoC) vs. Yield de Mercado:** Visualização clara da eficiência dos dividendos sobre o custo de aquisição histórico versus o custo de oportunidade atual.
 
-## 📦 How to Run
+### 3. Motor Tributário (Compliance Fiscal)
+Automatiza a apuração de resultados para fins de Imposto de Renda:
+* Distinção automática entre Swing Trade e Day Trade.
+* Aplicação da regra de isenção para vendas de ações até R$ 20.000,00.
+* Compensação automática de prejuízos acumulados entre meses.
+* Tratamento diferenciado para FIIs, ETFs e Ações (Units/ON/PN).
 
-Since this is a client-side application with no backend requirements:
+### 4. Gestão de Eventos Corporativos
+Suporte nativo a eventos que alteram a base acionária sem fluxo financeiro direto, como **Desdobramentos (Splits)** e **Grupamentos (Inplits)**, ajustando o Preço Médio e o histórico retroativo para manter a consistência dos gráficos de performance.
 
-1. Clone this repository or download the ZIP file.
-2. Open `index.html` in any modern web browser (Chrome, Edge, Firefox).
-3. The application will start immediately with a clean database (or load demo data if configured).
+## 🛠️ Tecnologia e Arquitetura
 
-## 👨‍💻 Author
+* **Stack:** HTML5, CSS3, JavaScript (ES6+). Sem frameworks, focado em performance e manipulação eficiente do DOM.
+* **Persistência:** LocalStorage (Offline-First) com capacidade de exportação/importação de backup JSON.
+* **Integração de Dados:** Sistema agnóstico preparado para consumir cotações via CSV ou APIs públicas.
+* **Metodologia:** Desenvolvimento assistido por IA (AI-Assisted Engineering), atuando como Product Owner e Arquiteto de Solução na definição das regras de negócio e validação (QA) dos algoritmos gerados.
 
-**Gustavo Martins Rocha** *Fintech Product Developer & Analyst* Wembley, UK
+## 📦 Instalação e Uso Local
+
+1.  Clone o repositório:
+    ```bash
+    git clone [https://github.com/seu-usuario/personal-investment-manager.git](https://github.com/seu-usuario/personal-investment-manager.git)
+    ```
+2.  Abra o arquivo `index.html` em qualquer navegador moderno.
+3.  O sistema carregará automaticamente o arquivo `default_data.json` para demonstração.
 
 ---
-*Note: This project was originally designed for the Brazilian market (handling complex tax rules and specific asset classes like FIIs) and has been adapted for this portfolio demonstration.*
+*Desenvolvido por GUSTAVO MARTINS ROCHA*
