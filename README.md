@@ -47,12 +47,20 @@ Suporte nativo a eventos que alteram a base acionária sem fluxo financeiro dire
 
 ## 📦 Instalação e Uso Local
 
+Para rodar o projeto na sua máquina:
+
 1.  Clone o repositório:
     ```bash
     git clone [https://github.com/g-martins-rocha/personal-investment-manager.git](https://github.com/g-martins-rocha/personal-investment-manager.git)
     ```
-2.  Abra o arquivo `index.html` em qualquer navegador moderno.
-3.  O sistema carregará automaticamente o arquivo `default_data.json` para demonstração.
 
+2.  Escolha uma forma de abrir:
+
+    * **Opção A (Servidor Local - Recomendada):**
+        Se você abrir o projeto usando uma extensão como *Live Server* (VS Code) ou Python (`python -m http.server`), os dados de demonstração serão carregados **automaticamente**.
+
+    * **Opção B (Arquivo Direto):**
+        Se você apenas clicar duas vezes no arquivo `index.html` (protocolo `file://`), o navegador bloqueará o carregamento automático do JSON por segurança (CORS).
+        * Neste caso, ao abrir o sistema, vá em **Configurações > Restaurar Backup** e selecione manualmente o arquivo `default_data.json` que está na pasta do projeto.
 ---
 *Desenvolvido por GUSTAVO MARTINS ROCHA*
