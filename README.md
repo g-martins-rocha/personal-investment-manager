@@ -50,9 +50,9 @@ Suporte nativo a eventos que alteram a base acionária sem fluxo financeiro dire
 Para rodar o projeto na sua máquina:
 
 1.  Clone o repositório:
-    '''bash
-    git clone [https://github.com/g-martins-rocha/personal-investment-manager.git](https://github.com/g-martins-rocha/personal-investment-manager.git)
-    '''
+    ```bash
+    git clone https://github.com/g-martins-rocha/personal-investment-manager.git
+    ```
 
 2.  Escolha uma forma de abrir:
 
