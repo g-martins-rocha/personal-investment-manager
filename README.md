@@ -2,7 +2,7 @@
 
 Sistema de gestão de portfólio de investimentos "High-Fidelity" focado nas regras de negócio do mercado financeiro brasileiro (B3). Desenvolvido com arquitetura SPA (Single Page Application) em JavaScript Puro (Vanilla JS), operando em modo offline-first.
 
-🔗 **[Acesse a Demonstração Online Aqui](https://seu-usuario.github.io/personal-investment-manager/)**
+🔗 **[Acesse a Demonstração Online Aqui](https://g-martins-rocha.github.io/personal-investment-manager/)**
 *(O sistema carregará automaticamente dados fictícios de demonstração ao abrir)*
 
 ## 🎯 Visão Geral
@@ -49,7 +49,7 @@ Suporte nativo a eventos que alteram a base acionária sem fluxo financeiro dire
 
 1.  Clone o repositório:
     ```bash
-    git clone [https://github.com/seu-usuario/personal-investment-manager.git](https://github.com/seu-usuario/personal-investment-manager.git)
+    git clone [https://github.com/g-martins-rocha/personal-investment-manager.git](https://github.com/g-martins-rocha/personal-investment-manager.git)
     ```
 2.  Abra o arquivo `index.html` em qualquer navegador moderno.
 3.  O sistema carregará automaticamente o arquivo `default_data.json` para demonstração.
